@@ -2,11 +2,14 @@ from urllib.request import urlopen
 from urllib.request import Request
 import json
 from bs4 import BeautifulSoup
+
+
+
 url='https://app.ticketmaster.com/discovery/v2/events.json?keyword=louisville&countryCode=US&apikey=so6DtimRyK50pnxWL3AgBB2FrpjCQGID'
 soup = BeautifulSoup((urlopen(url)),'html.parser')
 site_json=json.loads(soup.text)
-print([d.get('events') for d in site_json['_embedded'] if d.get('events')])
+print(soup)
           
-udpdate
+
 
 
